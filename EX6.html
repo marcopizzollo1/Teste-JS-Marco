@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Lista de Nomes</h2>
+  <label for="name">Nome:</label><br>
+  <input type="text" id="name" name="name" placeholder="Ex:Pedro"><br>
+<br>
+  <input type="submit" id="meu-push" value="Inserir">
+  <input type="submit" id="meu-pull" value="Remover primeiro da Fila">
+</body>
+<script>
+
+var listaNomes = [];
+
+function insere(){
+let nome = document.getElementById("name").value;
+listaNomes.push(nome);
+alert(listaNomes);
+}
+function remove(){
+if (listaNomes.length > 0){
+    listaNomes.shift()
+    if (listaNomes.length = 0){
+        alert("A lista está vazia")
+    }
+    else{
+    alert("A lista está vazia")
+}
+}else{
+    alert("A lista está vazia")
+}
+}
+
+document.getElementById("meu-push").onclick = function (e) {
+      insere();
+      e.preventDefault();
+      };
+      document.getElementById("meu-pull").onclick = function (e) {
+      remove();
+      e.preventDefault();
+      };
+</script>
+</html>
