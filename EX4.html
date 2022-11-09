@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcula IMC</title>
+  </head>
+  <body>
+    <h1>CÁLCULO DO IMC</h1>
+    <form id="formulario">
+      <div>
+        <label for="altura">ALTURA EM METROS: </label>
+        <input type="number" id="altura" name="altura" placeholder="Ex: 1.80" />
+        <br />
+        <br />
+        <label for="peso">PESO EM KG: </label>
+        <input type="number" id="peso" name="peso" placeholder="Ex: 70.5" />
+      </div>
+      <br />
+      <div>
+        <input type="submit" id="meu-submit" value="RESULTADO" />
+      </div>
+    </form>
+  </body>
+  <script>
+    function calculaIMC() {
+      let altura = document.getElementById("altura").value;
+      let peso = document.getElementById("peso").value;
+      let imc = peso / (altura * altura);
+      let resultadoIMC = imc.toFixed(2);
+
+      console.log(peso)
+
+      if (imc <= 18.4) {
+        alert("Seu IMC é de: " + resultadoIMC + " (Abaixo do peso)");
+      } else if (imc <= 24.9) {
+        alert("Seu IMC é de: " + resultadoIMC + " (Normal)");
+      }else if ( imc < 25.1) {
+        alert("Seu IMC é de: " + resultadoIMC + " (Limite entre normal e acima do peso)");
+      } else if (imc <= 29.9) {
+        alert("Seu IMC é de: " + resultadoIMC + " (Acima do peso)");
+      }else if (imc > 29.9){
+        alert("Seu IMC é de: " + resultadoIMC + " (Obeso)");
+      }else {
+        alert("Valores inválidos");
+      }
+
+    }
+    document.getElementById("meu-submit").onclick = function (e) {
+      calculaIMC();
+      e.preventDefault();
+    };
+  </script>
+</html>
