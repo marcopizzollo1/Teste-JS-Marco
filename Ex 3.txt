@@ -1,0 +1,1 @@
+b) Loop infinito, pois ele vai ficar preso no while <=10 pois vai pegar o valor num e adicionar 0 então ele sempre vai entrar no while num <=10
